@@ -21,7 +21,7 @@ RUN apt update && apt install -y \
     gettext
 
 # mbedtls
-RUN mbedtls_ver=2.6.0 \
+RUN mbedtls_ver=2.12.0 \
 	&&  wget --no-check-certificate https://tls.mbed.org/download/mbedtls-$mbedtls_ver-gpl.tgz \
 	&& tar xvf mbedtls-$mbedtls_ver-gpl.tgz \
 	&& cd mbedtls-$mbedtls_ver \
@@ -30,7 +30,7 @@ RUN mbedtls_ver=2.6.0 \
 	&& make install
 
 # pcre
-RUN pcre_ver=8.41 \
+RUN pcre_ver=8.42 \
 	&& wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-$pcre_ver.tar.gz \
 	&& tar xvf pcre-$pcre_ver.tar.gz \
 	&& cd pcre-$pcre_ver \
@@ -56,7 +56,7 @@ RUN libev_ver=4.24 \
 	&& make install
 
 # c-ares
-RUN cares_ver=1.13.0 \
+RUN cares_ver=1.14.0 \
 	&& wget https://c-ares.haxx.se/download/c-ares-$cares_ver.tar.gz \
 	&& tar xvf c-ares-$cares_ver.tar.gz \
 	&& cd c-ares-$cares_ver \

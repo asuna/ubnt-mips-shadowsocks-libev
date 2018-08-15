@@ -19,7 +19,7 @@ ss_path=$(pwd)
 cd $ss_path
 
 # Install mbedtls
-mbedtls_ver=2.6.0 \
+mbedtls_ver=2.12.0 \
 	&&  wget --no-check-certificate https://tls.mbed.org/download/mbedtls-$mbedtls_ver-gpl.tgz \
 	&& tar xvf mbedtls-$mbedtls_ver-gpl.tgz \
 	&& cd mbedtls-$mbedtls_ver \
@@ -30,7 +30,7 @@ mbedtls_ver=2.6.0 \
 
 # Install pcre
 cd $ss_path
-pcre_ver=8.41 \
+pcre_ver=8.42 \
 	&& wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-$pcre_ver.tar.gz \
 	&& tar xvf pcre-$pcre_ver.tar.gz \
 	&& cd pcre-$pcre_ver \
@@ -59,7 +59,7 @@ libev_ver=4.24 \
 
 # Install c-ares
 cd $ss_path
-cares_ver=1.13.0 \
+cares_ver=1.14.0 \
 	&& wget https://c-ares.haxx.se/download/c-ares-$cares_ver.tar.gz \
 	&& tar xvf c-ares-$cares_ver.tar.gz \
 	&& cd c-ares-$cares_ver \
@@ -69,10 +69,8 @@ cares_ver=1.13.0 \
 
 # Install shadowsocks-libev
 cd $ss_path
-ss_ver=3.2.0 \
-	&& git clone https://github.com/shadowsocks/shadowsocks-libev \
+git clone https://github.com/shadowsocks/shadowsocks-libev \
 	&& cd shadowsocks-libev \
-	&& git checkout v$ss_ver -b v$ss_ver \
 	&& git submodule update --init --recursive \
 	&& ./autogen.sh \
 	&& LIBS="-lpthread -lm" \
