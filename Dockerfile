@@ -47,7 +47,7 @@ RUN git clone https://github.com/jedisct1/libsodium \
 	&& make && make install
 
 # libev
-RUN libev_ver=4.24 \
+RUN libev_ver=4.27 \
 	&& wget http://dist.schmorp.de/libev/libev-$libev_ver.tar.gz \
 	&& tar xvf libev-$libev_ver.tar.gz \
 	&& cd libev-$libev_ver \
