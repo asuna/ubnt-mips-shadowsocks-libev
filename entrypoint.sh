@@ -6,7 +6,7 @@ git submodule update --init --recursive && ./autogen.sh
 LIBS="-lpthread -lm" \
 LDFLAGS="-Wl,-static -static -static-libgcc -L/usr/local/libev/lib" \
 CFLAGS="-I/usr/local/libev/include" \
-./configure --host=mipsel-linux-gnu --prefix=/usr/local/ss/erx \
+./configure --host=mips64-linux-gnuabi64 --prefix=/usr/local/ss/erx \
 --disable-ssp \
 --disable-documentation \
 --with-mbedtls=/usr/local/mbedtls \
@@ -25,7 +25,7 @@ git submodule update --init --recursive && ./autogen.sh
 LIBS="-lpthread -lm" \
 LDFLAGS="-Wl,-static -static -static-libgcc -L/usr/local/libev/lib" \
 CFLAGS="-I/usr/local/libev/include" \
-./configure --host=mipsel-linux-gnu --prefix=/usr/local/ss/erx \
+./configure --host=mips64-linux-gnuabi64 --prefix=/usr/local/ss/erx \
 --disable-ssp \
 --disable-documentation \
 --with-mbedtls=/usr/local/mbedtls \

@@ -7,8 +7,8 @@ apt update && apt install -y \
 	git \
 	autoconf \
 	automake \
-	g++-mipsel-linux-gnu \
-	gcc-mipsel-linux-gnu \
+	g++-mips64-linux-gnuabi64 \
+	gcc-mips64-linux-gnuabi64 \
 	gettext build-essential \
 	libtool
 
@@ -24,7 +24,7 @@ mbedtls_ver=2.12.0 \
 	&& tar xvf mbedtls-$mbedtls_ver-gpl.tgz \
 	&& cd mbedtls-$mbedtls_ver \
 	&& sed -i "s/DESTDIR=\/usr\/local/DESTDIR=\/usr\/local\/mbedtls/g" Makefile \
-	&& CC=mipsel-linux-gnu-gcc AR=mipsel-linux-gnu-ar LD=mipsel-linux-gnu-ld LDFLAGS=-static make \
+	&& CC=mips64-linux-gnuabi64-gcc AR=mips64-linux-gnuabi64-ar LD=mips64-linux-gnuabi64-ld LDFLAGS=-static make \
 	&& make install
 
 
@@ -34,7 +34,7 @@ pcre_ver=8.42 \
 	&& wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-$pcre_ver.tar.gz \
 	&& tar xvf pcre-$pcre_ver.tar.gz \
 	&& cd pcre-$pcre_ver \
-	&& ./configure --host=mipsel-linux-gnu --prefix=/usr/local/pcre --disable-shared --enable-utf8 --enable-unicode-properties \
+	&& ./configure --host=mips64-linux-gnuabi64 --prefix=/usr/local/pcre --disable-shared --enable-utf8 --enable-unicode-properties \
 	&& make \
 	&& make install
 
@@ -44,7 +44,7 @@ git clone https://github.com/jedisct1/libsodium \
 	&& cd libsodium/ \
 	&& git checkout stable \
 	&& ./autogen.sh \
-	&& ./configure --host=mipsel-linux-gnu --prefix=/usr/local/libsodium --disable-ssp --disable-shared \
+	&& ./configure --host=mips64-linux-gnuabi64 --prefix=/usr/local/libsodium --disable-ssp --disable-shared \
 	&& make && make install
 
 # Install libev
@@ -53,7 +53,7 @@ libev_ver=4.27 \
 	&& wget http://dist.schmorp.de/libev/libev-$libev_ver.tar.gz \
 	&& tar xvf libev-$libev_ver.tar.gz \
 	&& cd libev-$libev_ver \
-	&& ./configure --host=mipsel-linux-gnu --prefix=/usr/local/libev --disable-shared \
+	&& ./configure --host=mips64-linux-gnuabi64 --prefix=/usr/local/libev --disable-shared \
 	&& make \
 	&& make install
 
@@ -63,7 +63,7 @@ cares_ver=1.14.0 \
 	&& wget https://c-ares.haxx.se/download/c-ares-$cares_ver.tar.gz \
 	&& tar xvf c-ares-$cares_ver.tar.gz \
 	&& cd c-ares-$cares_ver \
-	&& ./configure --host=mipsel-linux-gnu --prefix=/usr/local/libcares --disable-shared --enable-utf8 --enable-unicode-properties \
+	&& ./configure --host=mips64-linux-gnuabi64 --prefix=/usr/local/libcares --disable-shared --enable-utf8 --enable-unicode-properties \
 	&& make \
 	&& make install
 
@@ -76,7 +76,7 @@ git clone https://github.com/shadowsocks/shadowsocks-libev \
 	&& LIBS="-lpthread -lm" \
 	LDFLAGS="-Wl,-static -static -static-libgcc -L/usr/local/libev/lib" \
 	CFLAGS="-I/usr/local/libev/include" \
-	./configure --host=mipsel-linux-gnu --prefix=$ss_path/erx \
+	./configure --host=mips64-linux-gnuabi64 --prefix=$ss_path/erx \
 	--disable-ssp \
 	--disable-documentation \
 	--with-mbedtls=/usr/local/mbedtls \
