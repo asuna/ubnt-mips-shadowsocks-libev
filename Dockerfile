@@ -31,7 +31,7 @@ RUN mbedtls_ver=2.12.0 \
 
 # pcre
 RUN pcre_ver=8.42 \
-	&& wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-$pcre_ver.tar.gz \
+	&& wget https://ftp.pcre.org/pub/pcre/pcre-$pcre_ver.tar.gz \
 	&& tar xvf pcre-$pcre_ver.tar.gz \
 	&& cd pcre-$pcre_ver \
 	&& ./configure --host=mipsel-linux-gnu --prefix=/usr/local/pcre --disable-shared --enable-utf8 --enable-unicode-properties \
