@@ -6,7 +6,7 @@ services:
   - docker
 
 before_install:
-  - docker build -t ubnt-erx-shadowsocks-libev .
+  - docker build -t ubnt-erpro-shadowsocks-libev .
   
 script:
-  - docker run -it -v $(pwd):/usr/local/ss ubnt-erx-shadowsocks-libev
+  - docker run -it -v $(pwd):/usr/local/ss ubnt-erpro-shadowsocks-libev
