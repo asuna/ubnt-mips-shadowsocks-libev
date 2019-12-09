@@ -15,4 +15,4 @@ jobs:
     - name: Build docker image
       run: docker build . -t ss-libev-mips
     - name: Build Shadowsocks-libev using docker image
-      run: docker run -it -v $(pwd):/usr/local/ss ss-libev-mips
+      run: docker run -i -v $(pwd):/usr/local/ss ss-libev-mips
