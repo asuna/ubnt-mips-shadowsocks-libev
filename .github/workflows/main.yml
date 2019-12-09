@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@mips64
+    - uses: actions/checkout@master
     - name: Build docker image
       run: docker build . -t ss-libev-mips
     - name: Build Shadowsocks-libev using docker image
