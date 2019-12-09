@@ -1,4 +1,4 @@
-name: Master-CI
+name: mips64-CI
 
 on:
   push:
