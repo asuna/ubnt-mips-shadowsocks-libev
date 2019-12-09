@@ -1,5 +1,0 @@
-name: 'Shadowsocks Libev for mips'
-description: 'Test Build'
-runs: 
-  using: 'docker'
-  image: 'Dockerfile'
