@@ -16,3 +16,7 @@ jobs:
       run: docker build . -t ss-libev-mips
     - name: Build Shadowsocks-libev using docker image
       run: docker run -i -v $(pwd):/usr/local/ss ss-libev-mips
+    - name: Package program
+      run: |
+        ls
+        tar zcf ss-libev-mips.tar.gz erx
