@@ -38,5 +38,3 @@ EdgeRouter X 基于 mipsel，由于 erx 存储空间不足，无法直接在机�
   chmod +x build_ss.sh
   sh build_ss.sh
   ```
-
-
